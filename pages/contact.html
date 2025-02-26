@@ -4,8 +4,271 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contactez-nous - La Tour Eiffel site OFFICIEL</title>
+    <link rel="stylesheet" href="../assets/css/contact-style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+    </style>
   </head>
   <body>
-    
+    <header class="contact-banner">
+      <h1>Contactez-nous</h1>
+      <img src="../assets/images/hero-contact-lg.jpg" aria-hidden="true" />
+    </header>
+
+    <main class="contact-main">
+      <section class="frame contact-info">
+        <span class="divider"></span>
+        <h2>Contactez le service client</h2>
+        <section class="contact-container">
+          <article class="contact individuals">
+            <p>
+              <strong>Particuliers</strong><br />
+              du lundi au samedi <br />
+              de 9h30 à 18h00 <br />
+              (dès 9h00 en été) <br />
+              au <br />
+              <a href="tel:+33892701239">08 92 70 12 39</a> <br />
+              (0,35€/min) <br />
+              serviceclients@toureiffel.paris
+            </p>
+            <div class="flags">
+              <img
+                src="../assets/images/flag-french.svg"
+                alt="Drapeau Français"
+              />
+              <img
+                src="../assets/images/flag-english.svg"
+                alt="Drapeau Anglais"
+              />
+              <img
+                src="../assets/images/flag-spanish.svg"
+                alt="Drapeau Espagnol"
+              />
+            </div>
+          </article>
+          <article class="contact profesionnals">
+            <p>
+              <strong>Professionels</strong><br />
+              du lundi au vendredi <br />
+              de 9h30 à 18h00 <br />
+              (dès 9h00 en été) <br />
+              au <br />
+              <a href="tel:+33892700016">08 92 70 00 16</a> <br />
+              (0,35€/min) <br />
+              professionnels@toureiffel.paris <br />
+              scolaires@toureiffel.paris <br />
+            </p>
+            <div class="flags">
+              <img
+                src="../assets/images/flag-french.svg"
+                alt="Drapeau Français"
+              />
+              <img
+                src="../assets/images/flag-english.svg"
+                alt="Drapeau Anglais"
+              />
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <section class="frame contact-form-container">
+        <span class="divider"></span>
+        <h2>Contactez-nous</h2>
+
+        <form id="contact-form" novalidate>
+          <div class="flags">
+            <img
+              src="../assets/images/flag-french.svg"
+              alt="Drapeau Français"
+            />
+            <img
+              src="../assets/images/flag-english.svg"
+              alt="Drapeau Anglais"
+            />
+            <img
+              src="../assets/images/flag-spanish.svg"
+              alt="Drapeau Espagnol"
+            />
+          </div>
+
+          <p><span>*</span> Champs obligatoires</p>
+
+          <div class="form-situation">
+            <label for="choose-situation"
+              >Vous êtes <span aria-hidden="true">*</span></label
+            >
+            <select name="situation" id="situation" required>
+              <option value="" selected>- Sélectionner -</option>
+              <option value="particular">Particulier</option>
+              <option value="tourism-professional">
+                Professionel du tourisme
+              </option>
+              <option value="event-organizer">Organisateur d'évènement</option>
+              <option value="press">Presse</option>
+              <option value="teacher">Enseignant</option>
+              <option value="audiovisual-professional">
+                Professionel de l'audiovisuel
+              </option>
+            </select>
+            <div id="situation-error" class="error" role="alert"></div>
+          </div>
+
+          <section class="grid">
+            <div class="form-gender">
+              <label for="gender">
+                Civilité <span aria-hidden="true">*</span>
+              </label>
+              <select name="gender" id="gender" required>
+                <option value="" selected>- Sélectionner -</option>
+                <option value="woman">Madame</option>
+                <option value="man">Monsieur</option>
+                <option value="not-specified">Non spécifié</option>
+              </select>
+              <div id="gender-error" class="error" role="alert"></div>
+            </div>
+
+            <span></span>
+
+            <div class="form-name">
+              <label for="name">Nom <span aria-hidden="true">*</span></label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+              />
+              <div id="name-error" class="error" role="alert"></div>
+            </div>
+
+            <div class="form-firstname">
+              <label for="firstname"
+                >Prénom <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="text"
+                id="firstname"
+                name="firstname"
+                autocomplete="firstname"
+                required
+              />
+              <div id="firstname-error" class="error" role="alert"></div>
+            </div>
+
+            <div class="form-email">
+              <label for="email"
+                >Votre adresse email <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+              />
+              <div id="email-error" class="error" role="alert"></div>
+              <p>Format attendu : exemple@test.com</p>
+            </div>
+
+            <div class="form-phone">
+              <label for="phone"
+                >Votre téléphone <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="phone"
+                pattern="(\+33|0)[1-9]( ?[0-9]{2}){4}"
+                required
+              />
+              <div id="phone-error" class="error" role="alert"></div>
+              <p>Format attendu : +33 6 12 34 56 78 ou 06 12 34 56 78</p>
+            </div>
+          </section>
+
+          <span class="divider gray"></span>
+
+          <div class="message">
+            <div>
+              <label for="message-object"
+                >Objet de votre requête <span aria-hidden="true">*</span></label
+              >
+              <select name="message-object" id="message-object" required>
+                <option value="" selected>- Sélectionner -</option>
+                <option value="purchase-tracking">Suivi de votre achat</option>
+                <option value="practical-info">Information pratique</option>
+                <option value="other">Autre</option>
+              </select>
+              <div id="message-object-error" class="error" role="alert"></div>
+            </div>
+
+            <div>
+              <label for="message"
+                >Votre message <span aria-hidden="true">*</span></label
+              >
+              <textarea
+                name="message"
+                id="message"
+                rows="6"
+                cols="60"
+                required
+              ></textarea>
+              <div id="message-error" class="error" role="alert"></div>
+            </div>
+          </div>
+
+          <button type="submit">Envoyer</button>
+
+          <p>
+            Les données présentement recueillies par la Société d’Exploitation
+            de la Tour Eiffel font l'objet d'un traitement permettant de
+            répondre à votre demande de contact. Ce traitement est fondé sur
+            l’intérêt légitime . La Société d’Exploitation de la Tour Eiffel,
+            responsable du traitement, est l’unique destinataire des données.
+            Celles-ci seront conservées le temps de répondre à votre demande.
+            Les champs suivis d’un « * » sont obligatoires afin de nous
+            contacter. Le défaut de réponse à ces champs entraîne une
+            impossibilité de soumettre une telle demande. Vous pouvez demander
+            l’accès, la rectification, l’effacement de vos données, ou vous
+            opposer à leur traitement, choisir d’en limiter l’usage ou définir
+            des directives relatives au sort de vos données après votre décès.
+            Pour exercer vos droits vous pouvez écrire au Délégué à la
+            Protection des Données par email à dpo@toureiffel.paris ou par
+            courrier (Société d’Exploitation de la Tour Eiffel, Délégué à la
+            Protection des Données, 1 quai de Grenelle, 75015 PARIS), justifiant
+            de votre identité par tout moyen . Vous avez également la
+            possibilité d’introduire une réclamation auprès de la Commission
+            Nationale de l’Informatique et des Libertés (Cnil) à l’adresse
+            suivante : 3 Place de Fontenoy – TSA 80715 – 75334 PARIS CEDEX 07.
+          </p>
+        </form>
+      </section>
+
+      <section class="frequent-questions">
+        <h2>
+          Consultez les <br />
+          questions les <br />
+          plus fréquentes
+        </h2>
+        <aside>
+          <a href="#"
+            >La tour Eiffel est-elle gratuite pour les non-voyants ?</a
+          >
+          <a href="#"
+            >J’ai acheté un billet pour le 2ème étage et je veux maintenant
+            acheter un complément sommet, est-ce possible ?</a
+          >
+          <a href="#"
+            >Il n’y a plus de billet disponible en ligne, comment visiter la
+            tour Eiffel ?</a
+          >
+          <a href="#">Puis-je modifier la date et/ou l’heure de mon billet ?</a>
+        </aside>
+      </section>
+    </main>
+
+    <script src="../assets/js/contactForm.js"></script>
   </body>
 </html>
