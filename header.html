@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <a href="#main-content" class="sr-only">Aller au contenu principal</a>
+    <header>
+        <nav aria-label="Navigation principale">
+            <div class="main-nav">
+                <a href="#" aria-label="Tarifs et Horaires">Tarifs et Horaires</a>
+                <a href="#" aria-label="Bien préparer votre visite">Bien préparer votre visite</a>
+                <a href="#" aria-label="Découvrir">Découvrir</a>
+                <a href="#" aria-label="Le monument">Le monument</a>
+                
+            </div>
+        <div class="logo">
+            <a href="#" aria-label="Logo Tour Eiffel">
+                <img src="images/logo.svg" alt="Logo Tour Eiffel">
+            </a>
+        </div>
+        <div class="nav-right">
+            <a href="#" aria-label="Restaurants et Boutiques">Restaurants Boutiques</a>
+            <a href="#" aria-label="Actualités">Actualités</a>
+            <div class="language-selector">
+                <button id="language-button" class="language-button" aria-haspopup="true" aria-expanded="false" aria-label="Sélectionner une langue, Français actuellement sélectionné">Fr</button>
+                <div id="language-dropdown" class="language-dropdown" role="menu" aria-labelledby="language-button">
+                  <a href="#" class="language-option current" role="menuitem" lang="fr">Français</a>
+                  <a href="#" class="language-option" role="menuitem" lang="en">English</a>
+                  <a href="#" class="language-option" role="menuitem" lang="es">Español</a>
+                  <a href="#" class="language-option" role="menuitem" lang="de">Deutsch</a>
+                  <a href="#" class="language-option" role="menuitem" lang="it">Italiano</a>
+                  <a href="#" class="language-option" role="menuitem" lang="zh">中文</a>
+                </div>
+              </div>
+            <div class="search">
+
+            </div>
+            <div class="nav-button">
+                <a href="#" aria-label="E-shop">E-shop</a>
+                <a href="#" aria-label="Billeterie">Billeterie</a>
+            </div>
+        </div>
+        </nav>
+    </header>
+
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const languageButton = document.getElementById('language-button');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageOptions = document.querySelectorAll('.language-option');
+    
+    // Fonction pour ouvrir/fermer le menu déroulant
+    function toggleDropdown() {
+      const expanded = languageButton.getAttribute('aria-expanded') === 'true';
+      
+      languageButton.setAttribute('aria-expanded', !expanded);
+      if (!expanded) {
+        languageDropdown.classList.add('show');
+        // Focus sur la première option
+        languageOptions[0].focus();
+      } else {
+        languageDropdown.classList.remove('show');
+      }
+    }
+    
+    // Ouverture/fermeture au clic
+    languageButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      toggleDropdown();
+    });
+    
+    // Gestion des touches pour l'accessibilité
+    languageButton.addEventListener('keydown', function(e) {
+      // Ouvrir avec Espace ou Entrée
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        toggleDropdown();
+      }
+      // Ouvrir avec flèche bas et focus sur la première option
+      else if (e.key === 'ArrowDown' || e.key === 'Down') {
+        e.preventDefault();
+        languageDropdown.classList.add('show');
+        languageButton.setAttribute('aria-expanded', 'true');
+        languageOptions[0].focus();
+      }
+    });
+    
+    // Gestion de la navigation par clavier dans le menu
+    let currentIndex = -1;
+    
+    languageOptions.forEach((option, index) => {
+      option.addEventListener('keydown', function(e) {
+        switch (e.key) {
+          case 'ArrowDown':
+          case 'Down':
+            e.preventDefault();
+            if (index < languageOptions.length - 1) {
+              languageOptions[index + 1].focus();
+            }
+            break;
+          case 'ArrowUp':
+          case 'Up':
+            e.preventDefault();
+            if (index > 0) {
+              languageOptions[index - 1].focus();
+            } else {
+              languageButton.focus();
+              languageDropdown.classList.remove('show');
+              languageButton.setAttribute('aria-expanded', 'false');
+            }
+            break;
+          case 'Escape':
+            e.preventDefault();
+            languageButton.focus();
+            languageDropdown.classList.remove('show');
+            languageButton.setAttribute('aria-expanded', 'false');
+            break;
+          case ' ':
+          case 'Enter':
+            e.preventDefault();
+            // Simulation du changement de langue
+            languageButton.textContent = option.textContent.substring(0, 2);
+            
+            // Mise à jour de la classe "current"
+            languageOptions.forEach(opt => opt.classList.remove('current'));
+            option.classList.add('current');
+            
+            // Fermer le menu
+            languageDropdown.classList.remove('show');
+            languageButton.setAttribute('aria-expanded', 'false');
+            languageButton.focus();
+            
+            // Mise à jour de l'aria-label
+            languageButton.setAttribute('aria-label', `Sélectionner une langue, ${option.textContent} actuellement sélectionné`);
+            break;
+        }
+      });
+      
+      // Changement de langue au clic
+      option.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Mise à jour du bouton
+        languageButton.textContent = option.textContent.substring(0, 2);
+        
+        // Mise à jour de la classe "current"
+        languageOptions.forEach(opt => opt.classList.remove('current'));
+        option.classList.add('current');
+        
+        // Fermer le menu
+        languageDropdown.classList.remove('show');
+        languageButton.setAttribute('aria-expanded', 'false');
+        
+        // Mise à jour de l'aria-label
+        languageButton.setAttribute('aria-label', `Sélectionner une langue, ${option.textContent} actuellement sélectionné`);
+      });
+    });
+    
+    // Fermer le menu en cliquant à l'extérieur
+    document.addEventListener('click', function(e) {
+      if (!languageButton.contains(e.target) && !languageDropdown.contains(e.target)) {
+        languageDropdown.classList.remove('show');
+        languageButton.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
+</html>
