@@ -32,7 +32,7 @@ h1 {
   color: #fff;
 }
 
-h2 {
+.contact-main h2 {
   font-size: 1.25rem;
 }
 
@@ -58,10 +58,11 @@ h2 {
   justify-content: center;
   align-items: center;
   gap: 5rem;
-  position: absolute;
+  margin: 5rem auto;
+  /* position: absolute;
   top: 340%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 .frame {
