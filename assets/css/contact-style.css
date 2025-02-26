@@ -131,7 +131,8 @@ a {
   box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.1);
 }
 
-form {
+fieldset {
+  border: none;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -184,21 +185,18 @@ form div select {
   padding: 0.5rem 0;
 }
 
-.radio-container {
-  display: flex;
-  padding: 0.5rem 0;
-}
-
-.radio {
-  width: 3rem;
-}
-
-textarea {
+form textarea {
+  padding: 1rem;
   margin: 0.5rem 0;
   width: 100%;
   background-color: #f0f0f0;
   border-radius: 5px;
   border-color: rgb(181, 181, 181);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  font-size: 14px;
 }
 
 .frequent-questions {
@@ -216,22 +214,32 @@ aside {
 }
 
 aside a {
-  color: #000;
-  padding: 1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   background-color: #fff;
   box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+aside a p {
+  color: #000;
   font-weight: normal;
+}
+
+aside a i {
+  font-weight: lighter;
+  background-color: var(--color-red);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
 }
 
 .message {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-}
-
-.error {
-  color: var(--color-red);
-  font-size: 0.9em;
-  margin-top: 5px;
 }
