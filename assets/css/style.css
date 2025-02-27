@@ -21,6 +21,10 @@ ff57/* Styles généraux */
 a.button{
 background-color: #9D6E00;
 }
+a.button :hover{
+    color: black;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -966,9 +970,6 @@ h5 {
     font-size: 1.25rem;
 }
 
-.button:hover {
-    background: #800;
-}
 
 .reseaux-sociaux {
     padding: 40px 20px;
@@ -1914,7 +1915,6 @@ footer {
 
 
 .news-button span {
-  background: red;
   padding: 5px 8px;
   border-radius: 50%;
   font-size: 1rem;
@@ -1985,9 +1985,6 @@ p {
   font-weight: bold;
 }
 
-.button:hover {
-  background: #a93226;
-}
 
 .a-ne-pas-manquer {
   padding: 40px 20px;
@@ -2092,9 +2089,7 @@ h5 {
   font-size: 1.25rem;
 }
 
-.button:hover {
-  background: #800;
-}
+
 
 .reseaux-sociaux {
   padding: 40px 20px;
