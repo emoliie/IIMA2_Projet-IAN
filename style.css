@@ -1,4 +1,4 @@
-/* Styles généraux */
+ff57/* Styles généraux */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -18,7 +18,9 @@
     --espace-l: 1.5rem;
     --espace-xl: 2rem;
 }
-
+a.button{
+background-color: #9D6E00;
+}
 body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
@@ -403,6 +405,9 @@ nav ul li a {
     color: var(--couleur-texte);
     text-decoration: none;
 }
+div.nav-button :hover{
+    color: black;
+}
 
 .langue {
     margin-left: auto;
@@ -650,7 +655,7 @@ button {
 }
 
 .actualite-content button {
-    background: #AF2630;
+    background: #9D6E00;
     color: var(--couleur-texte);
     border: none;
     padding: 10px;
@@ -772,7 +777,7 @@ footer {
 
 
 .news-button span {
-    background: red;
+    background:#9D6E00;
     padding: 5px 8px;
     border-radius: 50%;
     font-size: 1rem;
@@ -839,7 +844,7 @@ p {
 .button {
     display: inline-block;
     margin-right: 300px;
-    background: #c0392b;
+    background: #9D6E00;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -849,18 +854,23 @@ p {
 }
 
 .button:hover {
-    background: #a93226;
+    background:#9D6E00;
 }
 
 .a-ne-pas-manquer {
     padding: 40px 20px;
 }
-
+div.actualite-content button{
+    background-color:#9D6E00;
+}
 .header img {
     width: 80px;
     margin-bottom: 20px;
 }
-
+section.booking button{
+    background-color: #9D6E00;
+    padding: 10px;
+}
 h2,
 h5 {
     color: #001f3f;
@@ -896,7 +906,7 @@ h5 {
 
 .button {
     display: inline-block;
-    background: #a00;
+    background:#9D6E00;
     color: white;
     padding: 10px;
     margin-top: 10px7;
@@ -950,7 +960,7 @@ h5 {
 }
 
 .button {
-    background: #a00;
+    background: #9D6E00;
     color: white;
     padding: 5px 10px;
     text-decoration: none;
@@ -967,7 +977,7 @@ h5 {
 }
 
 .social-container {
-    background: rgb(255, 0, 0);
+    background: rgb#9D6E00;
     padding: 20px;
     border-radius: 10px;
     display: inline-block;
@@ -1036,7 +1046,7 @@ ul li {
 }
 
 .booking button {
-    background: #9d0000;
+    background:#9D6E00;
     color: var(--couleur-texte);
     border: none;
     padding: 10px 20px;
@@ -1055,6 +1065,7 @@ ul li {
 .booking {
   padding: 40px 20px;
   text-align: center;
+  background-color: #9D6E00;
 }
 
 .booking h2 {
@@ -1093,12 +1104,13 @@ ul li {
 }
 
 .booking td {
+    
   color: #0A1B2D;
   /* Bleu très foncé */
 }
 
 .booking button {
-  background: #9d0000;
+  background:#9D6E00;
   /* Doré */
   color: #F0F0F0;
   /* Blanc gris */
@@ -1121,7 +1133,7 @@ ul li {
 }
 
 .swiper-container {
-  width: 100%;
+  width: 100;
   margin: 0 auto;
   /* Center the Swiper */
   height: 100%;
@@ -1129,7 +1141,6 @@ ul li {
   overflow: hidden;
   /* Hide overflow */
 }
-
 overflow {
   overflow: hidden;
 }
@@ -1162,7 +1173,7 @@ overflow {
   height: 8px;
   display: inline-block;
   border-radius: 100%;
-  background: #9d0000;
+  background: #9D6E00;
   /* Doré */
   opacity: 0.7;
   transition: 0.3s opacity;
@@ -1170,7 +1181,7 @@ overflow {
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #ff0000;
+  background:#9D6E00;
   /* Bleu foncé */
 }
  /* Style pour le saut au contenu principal - accessibilité clavier */
@@ -1560,8 +1571,12 @@ nav ul li a {
 .hero .content {
   position: relative;
   z-index: 2;
+}div.content {
+    margin-left: 800px;
 }
-
+div.content p {
+    color: #ffffff;
+}
 button {
   background: var(--couleur-primaire);
   color: var(--couleur-texte);
@@ -1917,12 +1932,7 @@ footer {
   padding: 20px;
 }
 
-.header img {
-  width: 1200px;
-  display: block;
-  background-color: #ffffff;
-  margin-right: 200px;
-}
+
 
 h4 {
   color: #2c3e50;
@@ -1985,10 +1995,7 @@ p {
   padding: 40px 20px;
 }
 
-.header img {
-  width: 80px;
-  margin-bottom: 20px;
-}
+
 
 h2,
 h5 {
@@ -2190,4 +2197,4 @@ ul li {
   font-size: 1.5rem;
   /* 24px */
   color: #0C2340;
-  /* Bleu foncé */
+  /* Bleu foncé */} 
