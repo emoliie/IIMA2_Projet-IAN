@@ -1,4 +1,4 @@
-# IIMA2_Projet-IAN
+# IIMA2_Projet-IAN (Intégration Accessibilité Numérique)
 
 ## Description
 Ce projet est un clone du site officiel de la Tour Eiffel, mais rendu plus accessible selon les normes RGAA. Il inclut uniquement les pages d'accueil et de contact.
