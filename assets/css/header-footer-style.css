@@ -122,6 +122,7 @@
   
   .nav-button a:hover, .nav-button a:focus {
     background-color: var(--couleur-lien-hover);
+    color: #000;
   }
   
   /* FOOTER STYLES */
