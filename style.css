@@ -1792,7 +1792,7 @@ button {
 }
 
 .actualite-content button {
-  background: #AF2630;
+  background: #9D6E00;;
   color: var(--couleur-texte);
   border: none;
   padding: 10px;
@@ -1801,7 +1801,7 @@ button {
 }
 
 .actualite-content button:hover {
-  background: darkred;
+  background: #9D6E00;;
 }
 
 /* Pied de page */
