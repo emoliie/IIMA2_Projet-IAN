@@ -1,5 +1,6 @@
 :root {
   --color-primary: #0c2340;
+  --color-primary-hover: #113159;
   --color-secondary: #9d6e00;
   --color-red: #af2630;
 }
@@ -151,6 +152,11 @@ form button {
   border: none;
   border-radius: 5px;
   font-weight: 700;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--color-primary-hover);
 }
 
 form p {
